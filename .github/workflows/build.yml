@@ -8,7 +8,7 @@ on:
   repository_dispatch:
     types: [build]
   schedule:
-    - cron: '25 20 * * *'
+    - cron: '29 13 * * *'
 
 env:
   DOCKER_BUILDKIT: 1
