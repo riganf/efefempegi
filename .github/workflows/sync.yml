@@ -12,4 +12,4 @@ jobs:
     - uses: imba-tjd/rebase-upstream-action@master
       with:
         upstream: BtbN/FFmpeg-Builds
-        branch:   master
+        branch: master
