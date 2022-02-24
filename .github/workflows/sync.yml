@@ -1,9 +1,10 @@
-name: Rebase Upstream
+name: Rebase on Upstream
+
 on:
-  workflow_dispach:
+  workflow_dispatch:
 
 jobs:
-  sync:
+  rebase:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
