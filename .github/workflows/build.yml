@@ -1,10 +1,6 @@
 name: Build FFmpeg
 
 on:
-  push:
-    paths-ignore:
-      - '**.md'
-      - 'LICENSE'
   workflow_dispatch:
     inputs:
       doRelease:
@@ -18,7 +14,7 @@ on:
         default: false
         required: false
   schedule:
-    - cron: '0 12 * * *'
+    - cron: '15 0 * * *'
 
 env:
   DOCKER_BUILDKIT: 1
@@ -129,7 +125,7 @@ jobs:
       fail-fast: false
       matrix:
         target: [win64,linux64,linuxarm64]
-        variant: [gpl,lgpl,gpl 4.4,gpl 5.1,gpl 6.0,lgpl 4.4,lgpl 5.1,lgpl 6.0,gpl-shared,lgpl-shared,gpl-shared 4.4,gpl-shared 5.1,gpl-shared 6.0,lgpl-shared 4.4,lgpl-shared 5.1,lgpl-shared 6.0]
+        variant: [gpl,nonfree,gpl 4.4,gpl 5.1,gpl 6.0,nonfree 4.4,nonfree 5.1,nonfree 6.0]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -185,7 +181,7 @@ jobs:
       fail-fast: false
       matrix:
         target: [win64,linux64,linuxarm64]
-        variant: [gpl,lgpl,gpl 4.4,gpl 5.1,gpl 6.0,lgpl 4.4,lgpl 5.1,lgpl 6.0,gpl-shared,lgpl-shared,gpl-shared 4.4,gpl-shared 5.1,gpl-shared 6.0,lgpl-shared 4.4,lgpl-shared 5.1,lgpl-shared 6.0]
+        variant: [gpl,nonfree,gpl 4.4,gpl 5.1,gpl 6.0,nonfree 4.4,nonfree 5.1,nonfree 6.0]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
